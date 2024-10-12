@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "prismicio";
-import { Header } from "component";
+import { Header } from "components";
 import "./app.css";
 
 const alpino = localFont({
