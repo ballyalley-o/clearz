@@ -14,8 +14,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
     <section
       data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
+      data-slice-variation={slice.variation}>
       <PrismicRichText field={slice.primary.heading} />
       <PrismicRichText field={slice.primary.subheading} />
       <PrismicRichText field={slice.primary.body} />
