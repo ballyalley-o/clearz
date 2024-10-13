@@ -1,7 +1,7 @@
-import { Content } from "@prismicio/client";
+import { Content, asText } from "@prismicio/client";
 import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
-import { Bounded } from "components"
+import { Bounded, Button } from "components";
 
 /**
  * Props for `Hero`.
@@ -12,27 +12,32 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
-    <Bounded
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}>
-        <div className="grid">
-          <div className="grid h-screen place-items-center">
-            <PrismicRichText field={slice.primary.heading} />
-            <PrismicRichText field={slice.primary.subheading} />
-            <PrismicRichText field={slice.primary.body} />
-            <PrismicNextLink field={slice.primary.button_link}>
-              {slice.primary.button_text}
-            </PrismicNextLink>
+    <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+      <div className="grid">
+        <div className="grid h-screen place-items-center">
+          <div className="grid auto-rows-min place-items-center text-center">
+            <h1 className="hero-header text-7xl font-black uppercase leading-[.8] text-orange-500 md:text-[9rem] lg:text-[13rem]">
+              {asText(slice.primary.heading)}
+            </h1>
+            <div className="hero-subheading mt-12 text-5xl font-semibold text-sky-950 lg:text-6xl">
+              <PrismicRichText field={slice.primary.subheading} />
+            </div>
+            <div className="hero-body text-2xl font-normal text-sky-950">
+              <PrismicRichText field={slice.primary.body} />
+            </div>
+            <Button buttonLink={slice.primary.button_link} buttonText={slice.primary.button_text} className="hero-button mt-12" />
           </div>
-          <div className="grid text-side relative z-[80] h-screen items-center gap-4 md:grid-cols-2">
-            <PrismicNextImage field={slice.primary.cans_image} />
+        </div>
+        <div className="text-side relative z-[80] grid h-screen items-center gap-4 md:grid-cols-2">
+          <PrismicNextImage field={slice.primary.cans_image} className="w-full md:hidden" />
+          <h2 className="text-side-heading text-balance text-6xl font-black uppercase text-sky-950 lg:text-8xl">
             <PrismicRichText field={slice.primary.second_heading} />
+          </h2>
+          <div className="text-side-body mt-5 max-w-xl text-balance text-xl font-normal text-sky-950">
             <PrismicRichText field={slice.primary.second_body} />
           </div>
         </div>
-
-
-
+      </div>
     </Bounded>
   );
 };
