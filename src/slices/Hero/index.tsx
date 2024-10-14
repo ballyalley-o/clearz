@@ -1,5 +1,5 @@
 import { Content, asText } from "@prismicio/client";
-import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { Bounded, Button, TextSplitter } from "components";
 
