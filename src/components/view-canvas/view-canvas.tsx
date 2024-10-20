@@ -16,12 +16,17 @@ export default function ViewCanvas({}: Props) {
         pointerEvents: "none",
         zIndex: 30,
       }}
+      shadows
+      dpr={[1, 1.5]}
+      gl={{ antialias: true }}
+      camera={{ fov: 30 }}
     >
-      <mesh rotation={[0.5, 0.5, 0]}>
+      <mesh rotation={[0.5, 0.5, 0]} position={[1, 0, 0]}>
         <boxGeometry />
         <meshStandardMaterial color={"hotpink"} />
       </mesh>
       <ambientLight intensity={2} />
+      <spotLight intensity={3} position={[1, 1, 1]} />
     </Canvas>
   );
 }
