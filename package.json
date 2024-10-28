@@ -18,6 +18,7 @@
     "@prismicio/client": "^7.11.0",
     "@prismicio/next": "^1.7.0",
     "@prismicio/react": "^2.9.0",
+    "@react-three/drei": "^9.115.0",
     "@react-three/fiber": "^8.17.10",
     "@types/three": "^0.169.0",
     "clsx": "^2.1.1",
