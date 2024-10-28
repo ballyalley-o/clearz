@@ -1,6 +1,8 @@
 "use client";
 
+import { Environment, View } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Floating } from "components";
 
 type Props = {};
 
@@ -25,8 +27,7 @@ export default function ViewCanvas({}: Props) {
         <boxGeometry />
         <meshStandardMaterial color={"hotpink"} />
       </mesh>
-      <ambientLight intensity={2} />
-      <spotLight intensity={3} position={[1, 1, 1]} />
+      <View.Port />
     </Canvas>
   );
 }
