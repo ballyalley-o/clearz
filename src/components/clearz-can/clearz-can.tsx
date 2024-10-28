@@ -7,10 +7,10 @@ useGLTF.preload("/Soda-can.gltf");
 
 const flavorTextures = {
   lemonLime: "/image/label/lemon-lime.png",
-  grape: "/image/labels/grape.png",
-  blackCherry: "/image/labels/cherry.png",
-  strawberryLemonade: "/image/labels/strawberry.png",
-  watermelon: "/image/labels/watermelon.png",
+  grape: "/image/label/grape.png",
+  blackCherry: "/image/label/black-cherry.png",
+  strawberryLemonade: "/image/label/strawberry.png",
+  watermelon: "/image/label/watermelon.png",
 };
 
 const metalMaterial = new THREE.MeshStandardMaterial({
@@ -25,7 +25,7 @@ export type ClearzCanProps = {
 };
 
 export function ClearzCan({ flavor = "blackCherry", scale = 2, ...props }: ClearzCanProps) {
-  const { nodes } = useGLTF("/Soda-can.gltf");
+  const { nodes } = useGLTF("/3x/Soda-can.gltf");
 
   const labels = useTexture(flavorTextures);
 
