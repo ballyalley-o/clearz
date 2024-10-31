@@ -14,7 +14,6 @@ export function ClearzLogo(props: SVGProps<SVGSVGElement>) {
       aria-labelledby="clearz-logo-title"
     >
       <title id="clearz-logo-title">Clearz</title>
-
       <mask id="wave-mask" style={{ maskType: "alpha" }} width="202" height="118" x="0" y="0" maskUnits="userSpaceOnUse">
         <g className="transition-transform duration-500 ease-in-out group-hover:translate-y-[80%]">
           <path
